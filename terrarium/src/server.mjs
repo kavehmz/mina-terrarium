@@ -19,7 +19,7 @@ const ALWAYS = process.env.ALWAYS_TICK === "1";
 const SPEEDS = [1, 10, 30, 60, 120];
 
 const log = createLog();
-const world = new World({ startDay: 1, startHour: Number(process.env.START_HOUR || 6.5) });
+const world = new World({ startDay: 1, startHour: Number(process.env.START_HOUR || 7) });
 const brain = new Brain(world, log);
 const story = [];
 world.on(e => {

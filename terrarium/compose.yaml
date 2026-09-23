@@ -12,7 +12,7 @@ services:
       PORT: "3000"
       LOG_DIR: /app/logs
       TZ: ${TZ:-Europe/Berlin}
-      START_HOUR: ${START_HOUR:-6.5}
+      START_HOUR: ${START_HOUR:-7}
     volumes:
       - ./logs:/app/logs
       # Code is mounted read-only so a restart picks up edits without a rebuild.

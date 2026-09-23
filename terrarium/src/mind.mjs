@@ -7,7 +7,7 @@ import { PLACES, ROOMS } from "./layout.mjs";
 
 export const LIFE = [
   "Mina, 34, lives alone in a small one-storey house on the edge of the city.",
-  "She works at the city library, Monday to Friday, 09:00 to 17:00. The bus takes about 25 minutes.",
+  "She works at the city library, Monday to Friday, 12:00 to 18:00. It is a relaxed job. The bus takes about 25 minutes.",
   "Leyla is her older sister (38, a nurse on shifts, married with two small kids, lives across town, 30 minutes away).",
   "Sam is her close friend (35, a freelance designer who likes the café on Linden Street).",
   "Dana is her manager at the library.",

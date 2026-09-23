@@ -182,7 +182,7 @@ export class World {
       lights: Object.fromEntries(ROOM_IDS.map(r => [r, false])),
       windows: Object.fromEntries(ROOM_IDS.map(r => [r, false])),
       door: { open: false, locked: true },
-      alarmClock: { at: 7 * H, ringing: false, since: null },
+      alarmClock: { at: 7.5 * H, ringing: false, since: null },
       smokeAlarm: false,
       power: true, powerBackAt: null,
       fridge: { meals: 3, snacks: 3 },
@@ -366,7 +366,7 @@ export class World {
     }
     // Work notices if she does not turn up on a weekday and has not said anything.
     const weekday = c.day % 7 < 5;
-    if (weekday && c.hours > 9.6 && c.hours < 10 && this.danaCheckedDay !== c.day) {
+    if (weekday && c.hours > 12.6 && c.hours < 13 && this.danaCheckedDay !== c.day) {
       this.danaCheckedDay = c.day;
       const atWork = this.person.place === "library" || this.person.travel?.to === "library";
       const toldWork = this.person.messagesToday?.dana === c.day;
@@ -380,7 +380,7 @@ export class World {
     const atWork = p.location === "away" && p.place === "library";
     if (!atWork) { w.pending = []; w.nextAt = 0; return; }
     if (!w.nextAt) w.nextAt = this.t + rand(20, 45) * M;
-    if (this.t >= w.nextAt && h >= 9 && h < 17 && w.pending.length < 2) {
+    if (this.t >= w.nextAt && h >= 12 && h < 18 && w.pending.length < 2) {
       const busy = new Set(w.pending.map(e => e.kind));
       const choices = WORK_EVENTS.filter(e => !busy.has(e.kind));
       const e = pick(choices);

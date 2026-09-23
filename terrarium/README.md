@@ -76,4 +76,4 @@ Every run writes three files to `./logs` on the host:
 
 ## Settings (`../.env` or compose environment)
 
-`SIM_SPEED` (60), `TICK_MS` (1000), `TYPESAFE_MODEL` (`jev-latest`), `SYSTEM_TWO_MODEL` (starting model: `claude-opus-5-5`, `claude-opus-5`, `claude-haiku-4-5` or `gpt-6-luna`), `OPENAI_API_KEY` (only for GPT-6 Luna), `SYSTEM_TWO_EFFORT` (`low`), `ALWAYS_TICK` (off), `START_HOUR` (6.5), `TERRARIUM_PORT` (3006).
+`SIM_SPEED` (60), `TICK_MS` (1000), `TYPESAFE_MODEL` (`jev-latest`), `SYSTEM_TWO_MODEL` (starting model: `claude-opus-5-5`, `claude-opus-5`, `claude-haiku-4-5` or `gpt-6-luna`), `OPENAI_API_KEY` (only for GPT-6 Luna), `SYSTEM_TWO_EFFORT` (`low`), `ALWAYS_TICK` (off), `START_HOUR` (7), `TERRARIUM_PORT` (3006).
