@@ -1,0 +1,11 @@
+[
+  { "until": "s.clock.hours > 23.3 && !s.person.awake", "max": 90000 },
+  { "shot": "night-asleep" },
+  { "poke": "doorbell" },
+  { "until": "s.brain.thinking", "max": 60000 },
+  { "shot": "night-thinking" },
+  { "until": "!s.brain.thinking && s.brain.intention", "max": 60000 },
+  { "burst": "night-thought", "n": 5, "every": 1400 },
+  { "wait": 6000 },
+  { "burst": "night-door", "n": 6, "every": 2500 }
+]

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 415" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Who owns what</title>
+  <desc>Three columns. Code, the world: clock, rooms, needs rising, a stove burning food, a pipe flooding, doorbells, texts, and carrying out chosen steps. Jev, she feels: six yes-no feelings plus most pressing, urgency and mood. The LLM, she decides: her thoughts, what she does, whether to finish first, texts and calls, what to remember, a note for System One. Bottom line: nothing in the code decides what she wants.</desc>
+  <rect x="0" y="0" width="1200" height="415" fill="#FDFDFB"/>
+  <rect x="0.5" y="0.5" width="1199" height="414" fill="none" stroke="#D4D8D0"/>
+  <text x="40" y="50" font-size="26" font-weight="700" fill="#22272B">Who owns what</text>
+  <text x="40" y="76" font-size="14" fill="#5A6570">The world is code. Her feelings are System 1. Her choices are System 2.</text>
+  <rect x="40" y="100" width="356" height="260" rx="12" fill="#FBEFD6" stroke="#9A6512" stroke-width="1.6"/>
+  <text x="60" y="130" font-size="13" font-weight="700" fill="#9A6512" letter-spacing="1">CODE: THE WORLD</text>
+  <text x="60" y="162" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">The clock, daylight, weather</text>
+  <text x="60" y="190" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Rooms, doorways, the bus</text>
+  <text x="60" y="218" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Needs rise with time</text>
+  <text x="60" y="246" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">A stove left on burns the food</text>
+  <text x="60" y="274" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">A burst pipe floods the hall</text>
+  <text x="60" y="302" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Doorbells, texts, work events</text>
+  <text x="60" y="330" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Carries out the steps she chose</text>
+  <rect x="416" y="100" width="356" height="260" rx="12" fill="#E3F4F2" stroke="#1E8C87" stroke-width="1.6"/>
+  <text x="436" y="130" font-size="13" font-weight="700" fill="#1E8C87" letter-spacing="1">SYSTEM 1 · JEV: SHE FEELS</text>
+  <text x="436" y="162" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Does my body need something?</text>
+  <text x="436" y="190" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Is something wrong?</text>
+  <text x="436" y="218" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Does someone want me?</text>
+  <text x="436" y="246" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Is something due?</text>
+  <text x="436" y="274" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Does my plan still fit?</text>
+  <text x="436" y="302" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Am I at a loose end?</text>
+  <text x="436" y="330" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">+ most pressing, urgency, mood</text>
+  <rect x="792" y="100" width="356" height="260" rx="12" fill="#EFE9FB" stroke="#6B4BC4" stroke-width="1.6"/>
+  <text x="812" y="130" font-size="13" font-weight="700" fill="#6B4BC4" letter-spacing="1">SYSTEM 2 · LLM: SHE DECIDES</text>
+  <text x="812" y="162" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">What she thinks, in her words</text>
+  <text x="812" y="190" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">What she does about it</text>
+  <text x="812" y="218" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Whether to finish first</text>
+  <text x="812" y="246" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">What to text, whom to call</text>
+  <text x="812" y="274" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">What to remember</text>
+  <text x="812" y="302" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">A note for System 1</text>
+  <text x="812" y="330" font-size="15" font-weight="400" fill="#22272B" text-anchor="start">Nothing else, and never on a timer</text>
+  <text x="600" y="392" font-size="15" fill="#22272B" text-anchor="middle" font-weight="700">Nothing in the code decides what she wants. If she goes to work, she chose to.</text>
+
+</svg>

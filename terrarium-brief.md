@@ -6,9 +6,9 @@ This brief consolidates everything I said across the first session, in my words,
 
 ## 0. Instructions to the implementer
 
-1. Read this whole file before doing anything. My words carry the most weight. Section 9 (decisions from the first build) is optional; everything else is a requirement.
+1. Read this whole file before doing anything. My words carry the most weight. Sections 9 and 12 (decisions from the first and second builds that were Claude's proposals) are lower weight; everything else is a requirement, including my own decisions in section 11.
 2. Read the TypeSafe skill and the docs listed in section 8 as part of the work. Use them for this session only. **Do not install the skill.** Say so plainly if you could not read something completely.
-3. Design your own implementation from this brief. The first implementation exists in `~/tmp/kmz/typesafe-time/fable`; look at it only as a reference for what I have already seen and criticised, not as something to copy. Its appearance may differ from yours. Preserve my intent.
+3. Design your own implementation from this brief. Two implementations exist: `fable/` (the first, criticised) and `terrarium/` (the second, the one I liked and published). Look at them only as references for what I have seen, liked and criticised, not as something to copy. Your appearance may differ. Preserve my intent.
 4. Everything you build runs in Docker or Docker Compose. Do not install packages or apps on my Mac. My machine has podman with `docker` aliased to it and docker-compose available.
 5. Keys are in `.env` next to this file: `TYPESAFE_API_KEY` and `ANTHROPIC_API_KEY`. They never reach the browser or the image. Really call TypeSafe and the LLM; never fake a decision.
 6. Keep a log file on my machine, as section 6 describes, from the first run onward.
@@ -130,3 +130,48 @@ These were Claude's proposals that I accepted or did not object to. Keep them un
 - "Keep a log so you see if actions make sense; easier to debug later rather than me copy-pasting what I see on the screen."
 - "Two persons in one home is too much for our start. Switch to a one-person home and focus on making her a perfect artificial human with System One and System Two abilities."
 - "When she is thinking the clock is still running. A good LLM these days is very slow, not even close to Jev. That plus our accelerated time must not make the whole experience ridiculous."
+
+## 11. My decisions from the second build (requirements)
+
+These came from me while using the second build (`terrarium/`, September 2026). They are requirements with the same weight as sections 1 to 7.
+
+- **Name the two systems plainly.** System 1 and System 2 are Daniel Kahneman's (*Thinking, Fast and Slow*). The whole point of the project is bringing that split into AI agents: a fast, always-on System 1 (Jev) and a slow System 2 (an LLM) that thinks only when System 1 says it matters. The page, the docs and the README must make that connection obvious. My main message: **this is how the next generation of AI agents will work, and people building agents should start designing them like this.** In my words: "We have spent years making LLMs smarter at answering. The next step is giving them a pulse."
+- **System 2 is switchable, while she lives.** A menu on the page switches the model behind System 2 (and behind the other people and her memory summaries) without restarting her day. Choices: Claude Opus 5.5 (default), Claude Opus 5, Claude Haiku 4.5, and GPT-6 Luna when `OPENAI_API_KEY` is in `.env`. The page names whichever model is thinking ("Claude decides" becomes "GPT decides"), and each thought in the log names its model. The cost meter uses each model's own price.
+- **Show where she is when she is out.** An empty house while her thoughts are interesting loses people. When she leaves, a small live window appears above the bus stop showing the place she is at (the bus, the library, the café, the shop, the park, her sister's flat, the gym, the doctor's), with her in it and her pose matching what she is doing. The house stays the main view; this must not ruin the Terrarium.
+- **Give work its own ordinary events.** A work day was one long static stretch. At the library, ordinary things come up every so often (a reader needing help, a student stuck at the printer, a trolley of returns, a colleague stopping by, her manager asking a favour, the desk phone). They wait a while; ignored, they have consequences (the reader leaves grumbling). Her brain decides whether and how to deal with them. The world slows down while something waits for her, so a viewer sees it.
+- **No automatic fast-forward of calm stretches.** I rejected it: it would distort the simulation (fewer looks per hour of her life).
+- **Make the library alive the grounded way.** Only people the world knows are there appear (the reader during the reader event, the colleague at her desk, the manager while she asks). A staff corner for coffee and lunch, and a staff toilet, so her breaks show like at home. No crowds, and nobody else gets a brain.
+- **Keep her earlier thoughts on screen.** A short list of her last few thoughts, so a late viewer catches up. I also want to be able to read every past thought (the Inspect drawer and the log both have them).
+- **The doorbell at night must wake her.** A late caller rings persistently; she wakes, and what she does next is hers.
+- **Log times are my local time** (Europe/Berlin), not UTC.
+- **The code is public.** Repository: `github.com/kavehmz/mina-terrarium`, MIT licence. Never commit `.env`, keys or run logs; scan for keys before every commit (my git hook runs TruffleHog on the whole folder, so `.env` inside the repo makes it refuse). Commits carry no AI credit lines. I push myself unless I say otherwise.
+- **Tell me what I must restart.** A page-only change needs a browser refresh; a brain or world change needs `docker compose restart` (her day starts over); a `.env` change needs `docker compose up -d --force-recreate`.
+- **Open question:** the second build invented a colleague, Priya, who exists only in the work events. I have not yet decided whether she stays named, becomes "a colleague", or joins Mina's life facts.
+
+## 12. What the second build does (Claude's proposals I accepted, lower weight)
+
+Keep these unless something better serves the sections above. They are what made the second build work.
+
+**The brain**
+- System 1 asks 11 questions in one Jev request about every second (every three seconds while she sleeps): six feelings as Nouls (her body needs something, something is wrong, someone wants her or she misses someone, something is due, her plan no longer fits, she is at a loose end), plus most pressing (Choice, including "someone needs her here"), urgency (Score), mood (Score), attention (Choice) and a tiny reflex (Choice, carried out only if physically possible right there).
+- Each feeling is a leaky integrator: charge = charge × 0.85 + answer − 0.15; it fires at its line (2.0; 1.2 for "something is wrong").
+- **Rules that stop System 2 from overthinking** (each one fixed a real problem): after a decision, feelings may charge but not fire for 12 minutes of her life and at least 5 looks; a feeling System 2 has just weighed rests for 45 minutes unless the most-pressing thing changes or urgency rises clearly; an urgent fire skips the integrators only for something new, and never within 5 fresh looks of a decision; a look that read the world before her latest decision is ignored; a plan that ended or failed while she was thinking does not trigger another thought; something she is already dealing with no longer shows as waiting.
+- System 2 returns a first-person thought, a 2–6 word decision, `finish_current_step` (finish what she is doing first, or drop it now), 1–5 steps from a fixed action list, a note for System 1, and optionally something to remember. Asleep, System 1 sees only what reaches her (loud sounds, thick smoke), not the state of the house.
+- Memory: episodes fill up to 48; then (or when she goes to bed) Jev marks each keep or drop in one request, and System 2 folds the kept ones into a short story so far.
+
+**The world (physics only)**
+- A one-storey house (bedroom, bathroom, kitchen, living room, hall, dining room) with walls and doorways she walks through; a front path to a bus stop; places away with travel times.
+- Needs rise with time; a stove left on burns the food, smokes and sets off the alarm; a bath left running overflows into the hall; a burst pipe keeps pouring until the stopcock under the kitchen sink is closed; a plumber she calls rings the bell a couple of hours later; if she falls she can phone and crawl, but not stand while the pain is sharp; friends who promise to come round arrive and ring, and help her up if she is on the floor; a late caller at night is a stranger at the wrong house.
+- No habits that act for her: lights are only her choice. A shower stops when she steps out of it; other things she walks away from keep running.
+- The other people (her sister Leyla, her friend Sam, her manager Dana) reply to her texts, take her calls and sometimes text first, through the same model as System 2; they have no System 1.
+
+**Time**
+- Quiet stretches at the chosen speed (60× default). 3× while she walks, 6× when something is happening (doorbell, alarm, someone waiting for her at work), real time while System 2 thinks or while a call is being answered.
+
+**The page**
+- One line across the top: ① she feels → ② Jev fires (or "No Jev needed" when the trigger was the world, a finished plan or waking up) → ③ System 2 decides → ④ her body does.
+- Left: her body in words with bars, her senses, her phone, "Poke her world". Right: System 1 (most pressing, the six feelings charging to their line, urgency, mood) and System 2 (why it was called, her thought, her plan, the note to System 1, earlier thoughts). Bottom: the clock and its speed, the story in plain sentences, the last minute of looks, memory filling.
+- Labels in the house for anything left running and every consequence (water, smoke, open door, TV on).
+
+**Tooling**
+- Everything runs in Docker; code folders are mounted read-only so a restart picks up edits. Screenshots and the video are made in a headless browser in Docker (Playwright), staging moments with the pokes and a `START_HOUR` setting (for example 23:00 for the night doorbell). Figures for the README are generated by a script from real run numbers.

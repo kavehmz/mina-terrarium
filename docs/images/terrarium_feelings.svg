@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 410" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Watch a feeling fill up</title>
+  <desc>Two charts from real tick logs. Left: while Mina showers, Jev says her body needs something at about 0.3 to 0.5 each tick; the charge climbs over 17 ticks to the line at 2 and fires; her thought: Shower&#x27;s done its job, I&#x27;m starving. Right: the someone feeling idles low, a text from Leyla arrives, Jev jumps to 0.85 and the charge crosses the line within three ticks; her thought: Leyla&#x27;s asking about Saturday, quick reply now.</desc>
+  <rect x="0" y="0" width="1200" height="410" fill="#FDFDFB"/>
+  <rect x="0.5" y="0.5" width="1199" height="409" fill="none" stroke="#D4D8D0"/>
+  <text x="40" y="50" font-size="26" font-weight="700" fill="#22272B">Watch a feeling fill up</text>
+  <text x="40" y="76" font-size="14" fill="#5A6570">Real ticks from two runs. A half-true feeling that lasts fills slowly; a sudden, clear one crosses fast. One blip never fires.</text>
+  <text x="40" y="110" font-size="16" font-weight="700" fill="#22272B">Slow: her body, while she showers</text>
+  <text x="40" y="130" font-size="12.5" fill="#5A6570">Tuesday 07:03 → 07:16, 17 ticks</text>
+  <rect x="70" y="150" width="500" height="160" fill="#FFFFFF" stroke="#D4D8D0"/>
+  <line x1="70" y1="186.9" x2="570" y2="186.9" stroke="#6B4BC4" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="76" y="180.9" font-size="11.5" fill="#6B4BC4" font-weight="700">the line: call the LLM</text>
+  <rect x="77.4" y="291.5" width="14.7" height="18.5" fill="#9A6512" opacity="0.28"/>
+  <rect x="106.8" y="293.4" width="14.7" height="16.6" fill="#9A6512" opacity="0.28"/>
+  <rect x="136.2" y="292.8" width="14.7" height="17.2" fill="#9A6512" opacity="0.28"/>
+  <rect x="165.6" y="287.8" width="14.7" height="22.2" fill="#9A6512" opacity="0.28"/>
+  <rect x="195.0" y="282.9" width="14.7" height="27.1" fill="#9A6512" opacity="0.28"/>
+  <rect x="224.4" y="287.2" width="14.7" height="22.8" fill="#9A6512" opacity="0.28"/>
+  <rect x="253.8" y="285.4" width="14.7" height="24.6" fill="#9A6512" opacity="0.28"/>
+  <rect x="283.2" y="283.5" width="14.7" height="26.5" fill="#9A6512" opacity="0.28"/>
+  <rect x="312.6" y="279.8" width="14.7" height="30.2" fill="#9A6512" opacity="0.28"/>
+  <rect x="342.1" y="277.4" width="14.7" height="32.6" fill="#9A6512" opacity="0.28"/>
+  <rect x="371.5" y="281.7" width="14.7" height="28.3" fill="#9A6512" opacity="0.28"/>
+  <rect x="400.9" y="281.1" width="14.7" height="28.9" fill="#9A6512" opacity="0.28"/>
+  <rect x="430.3" y="281.7" width="14.7" height="28.3" fill="#9A6512" opacity="0.28"/>
+  <rect x="459.7" y="284.2" width="14.7" height="25.8" fill="#9A6512" opacity="0.28"/>
+  <rect x="489.1" y="278.6" width="14.7" height="31.4" fill="#9A6512" opacity="0.28"/>
+  <rect x="518.5" y="278.0" width="14.7" height="32.0" fill="#9A6512" opacity="0.28"/>
+  <rect x="547.9" y="279.2" width="14.7" height="30.8" fill="#9A6512" opacity="0.28"/>
+  <polyline points="84.7,284.2 114.1,281.1 143.5,277.4 172.9,269.4 202.4,257.7 231.8,251.5 261.2,245.4 290.6,237.4 320.0,227.5 349.4,216.5 378.8,211.5 408.2,206.6 437.6,202.9 467.1,202.3 496.5,196.2 525.9,190.6 555.3,186.9" fill="none" stroke="#9A6512" stroke-width="3"/>
+  <circle cx="555.3" cy="186.9" r="7" fill="#6B4BC4" stroke="#fff" stroke-width="2"/>
+  <text x="70" y="326" font-size="11" fill="#5A6570">07:03</text>
+  <text x="570" y="326" font-size="11" fill="#5A6570" text-anchor="end">07:16</text>
+  <text x="40" y="348" font-size="13.5" fill="#6B4BC4" font-style="italic">“Shower&#x27;s done its job… then eat. I&#x27;m starving, nothing since last night.”</text>
+  <text x="620" y="110" font-size="16" font-weight="700" fill="#22272B">Fast: a text from her sister arrives</text>
+  <text x="620" y="130" font-size="12.5" fill="#5A6570">Tuesday 09:10 → 09:26, 17 ticks</text>
+  <rect x="650" y="150" width="500" height="160" fill="#FFFFFF" stroke="#D4D8D0"/>
+  <line x1="650" y1="186.9" x2="1150" y2="186.9" stroke="#6B4BC4" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="656" y="180.9" font-size="11.5" fill="#6B4BC4" font-weight="700">the line: call the LLM</text>
+  <rect x="657.4" y="292.8" width="14.7" height="17.2" fill="#1E8C87" opacity="0.28"/>
+  <rect x="686.8" y="295.2" width="14.7" height="14.8" fill="#1E8C87" opacity="0.28"/>
+  <rect x="716.2" y="297.7" width="14.7" height="12.3" fill="#1E8C87" opacity="0.28"/>
+  <rect x="745.6" y="292.2" width="14.7" height="17.8" fill="#1E8C87" opacity="0.28"/>
+  <rect x="775.0" y="292.8" width="14.7" height="17.2" fill="#1E8C87" opacity="0.28"/>
+  <rect x="804.4" y="291.5" width="14.7" height="18.5" fill="#1E8C87" opacity="0.28"/>
+  <rect x="833.8" y="292.8" width="14.7" height="17.2" fill="#1E8C87" opacity="0.28"/>
+  <rect x="863.2" y="294.6" width="14.7" height="15.4" fill="#1E8C87" opacity="0.28"/>
+  <rect x="892.6" y="295.8" width="14.7" height="14.2" fill="#1E8C87" opacity="0.28"/>
+  <rect x="922.1" y="295.2" width="14.7" height="14.8" fill="#1E8C87" opacity="0.28"/>
+  <rect x="951.5" y="292.8" width="14.7" height="17.2" fill="#1E8C87" opacity="0.28"/>
+  <rect x="980.9" y="293.4" width="14.7" height="16.6" fill="#1E8C87" opacity="0.28"/>
+  <rect x="1010.3" y="292.2" width="14.7" height="17.8" fill="#1E8C87" opacity="0.28"/>
+  <rect x="1039.7" y="289.7" width="14.7" height="20.3" fill="#1E8C87" opacity="0.28"/>
+  <rect x="1069.1" y="257.7" width="14.7" height="52.3" fill="#1E8C87" opacity="0.28"/>
+  <rect x="1098.5" y="258.9" width="14.7" height="51.1" fill="#1E8C87" opacity="0.28"/>
+  <rect x="1127.9" y="257.1" width="14.7" height="52.9" fill="#1E8C87" opacity="0.28"/>
+  <polyline points="664.7,268.2 694.1,268.8 723.5,271.8 752.9,268.8 782.4,266.9 811.8,264.5 841.2,263.2 870.6,263.8 900.0,266.3 929.4,266.9 958.8,265.7 988.2,265.1 1017.6,263.2 1047.1,258.9 1076.5,223.2 1105.9,194.9 1135.3,168.5" fill="none" stroke="#1E8C87" stroke-width="3"/>
+  <circle cx="1135.3" cy="168.5" r="7" fill="#6B4BC4" stroke="#fff" stroke-width="2"/>
+  <text x="650" y="326" font-size="11" fill="#5A6570">09:10</text>
+  <text x="1150" y="326" font-size="11" fill="#5A6570" text-anchor="end">09:26</text>
+  <text x="620" y="348" font-size="13.5" fill="#6B4BC4" font-style="italic">“Leyla&#x27;s asking about Saturday. Quick reply now… then back to work.”</text>
+  <rect x="40" y="378" width="16" height="10" fill="#9A6512" opacity="0.3"/><text x="62" y="387" font-size="12.5" fill="#5A6570">Jev’s answer each tick (how true the feeling is, 0 to 1)</text>
+  <line x1="440" y1="383" x2="462" y2="383" stroke="#22272B" stroke-width="3"/><text x="468" y="387" font-size="12.5" fill="#5A6570">the charge: it leaks a little each tick and adds the new answer</text>
+  <circle cx="908" cy="383" r="6" fill="#6B4BC4"/><text x="920" y="387" font-size="12.5" fill="#5A6570">fired: her thought, seconds later</text>
+
+</svg>

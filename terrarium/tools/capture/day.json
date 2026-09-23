@@ -1,0 +1,21 @@
+[
+  { "until": "s.person.kind === 'cook'", "max": 180000 },
+  { "burst": "morning-cook", "n": 3, "every": 1500 },
+  { "until": "s.person.kind === 'eat'", "max": 120000 },
+  { "burst": "morning-eat", "n": 2, "every": 1500 },
+  { "poke": "leak" },
+  { "until": "s.brain.thinking", "max": 60000 },
+  { "shot": "pipe-thinking" },
+  { "until": "!s.brain.thinking && s.brain.intention && s.brain.intention.clock === s.clock.hm", "max": 60000 },
+  { "burst": "pipe-thought", "n": 4, "every": 1500 },
+  { "until": "s.person.location === 'travelling'", "max": 240000 },
+  { "burst": "bus", "n": 2, "every": 2000 },
+  { "until": "s.person.place === 'library' && s.person.work && s.person.work.length > 0", "max": 400000 },
+  { "burst": "library-waiting", "n": 3, "every": 1500 },
+  { "until": "s.person.kind === 'attend'", "max": 90000 },
+  { "burst": "library-attend", "n": 3, "every": 1500 },
+  { "until": "s.person.place === 'library' && s.person.work && s.person.work.length > 0 && !s.person.attend", "max": 400000 },
+  { "burst": "library-waiting2", "n": 2, "every": 1500 },
+  { "until": "s.person.kind === 'attend'", "max": 90000 },
+  { "burst": "library-attend2", "n": 3, "every": 1500 }
+]

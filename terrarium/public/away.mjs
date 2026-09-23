@@ -194,6 +194,7 @@ export class AwayView {
     if (kind === "toilet" && info.toilet) { [x, z, rot] = info.toilet; this.mina.visible = false; }
     else if ((kind === "drink" || kind === "eat") && info.staff) { [x, z, rot] = info.staff; body.position.y = -0.35; }
     else if (kind === "attend" && attend === "student" && info.printer) { [x, z, rot] = info.printer; }
+    else if (kind === "attend" && attend !== "trolley") { [x, z, rot] = info.sit; body.position.y = -0.35; }
     else if (kind === "attend" && attend === "trolley") {
       const a = this.t * 0.3; x = -0.4 + Math.sin(a) * 1.6; z = -1.9; rot = Math.cos(a) > 0 ? Math.PI / 2 : -Math.PI / 2;
       body.position.y = Math.abs(Math.sin(this.t * 7)) * 0.04;

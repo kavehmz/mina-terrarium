@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Her morning, by the numbers</title>
+  <desc>Six tiles for one morning, 07:00 to 13:30 of her life in 9 real minutes: System 1 looked 449 times, once a real second at 332 ms; System 2 thought 19 times, about once every 24 looks, at 4.4 seconds; zero lines of scripted behaviour; the looking cost 7 cents, the thinking 29 cents, the whole morning 39 cents.</desc>
+  <rect x="0" y="0" width="1200" height="340" fill="#FDFDFB"/>
+  <rect x="0.5" y="0.5" width="1199" height="339" fill="none" stroke="#D4D8D0"/>
+  <text x="40" y="50" font-size="26" font-weight="700" fill="#22272B">Her morning, by the numbers</text>
+  <text x="40" y="76" font-size="14" fill="#5A6570">a burst pipe, a plumber, the bus and a morning at work · 07:00 to 13:30 of her life, in 9 real minutes at 60× speed</text>
+  <rect x="40" y="100" width="356" height="100" rx="10" fill="#E3F4F2" stroke="#1E8C87" stroke-width="1.5"/>
+  <text x="218" y="126" font-size="12" fill="#1E8C87" text-anchor="middle" font-weight="700" letter-spacing="1">SYSTEM 1 LOOKED</text>
+  <text x="218" y="162" font-size="30" fill="#22272B" text-anchor="middle" font-weight="700">449 times</text>
+  <text x="218" y="186" font-size="13" fill="#5A6570" text-anchor="middle">once a real second · 332 ms a look</text>
+  <rect x="416" y="100" width="356" height="100" rx="10" fill="#EFE9FB" stroke="#6B4BC4" stroke-width="1.5"/>
+  <text x="594" y="126" font-size="12" fill="#6B4BC4" text-anchor="middle" font-weight="700" letter-spacing="1">SYSTEM 2 THOUGHT</text>
+  <text x="594" y="162" font-size="30" fill="#22272B" text-anchor="middle" font-weight="700">19 times</text>
+  <text x="594" y="186" font-size="13" fill="#5A6570" text-anchor="middle">about 1 in 24 looks woke it · 4.4 s a thought</text>
+  <rect x="792" y="100" width="356" height="100" rx="10" fill="#FBEFD6" stroke="#9A6512" stroke-width="1.5"/>
+  <text x="970" y="126" font-size="12" fill="#9A6512" text-anchor="middle" font-weight="700" letter-spacing="1">SCRIPTED</text>
+  <text x="970" y="162" font-size="30" fill="#22272B" text-anchor="middle" font-weight="700">0 lines</text>
+  <text x="970" y="186" font-size="13" fill="#5A6570" text-anchor="middle">no routine, no schedule, no rule for what she wants</text>
+  <rect x="40" y="215" width="356" height="100" rx="10" fill="#E3F4F2" stroke="#1E8C87" stroke-width="1.5"/>
+  <text x="218" y="241" font-size="12" fill="#1E8C87" text-anchor="middle" font-weight="700" letter-spacing="1">THE LOOKING COST</text>
+  <text x="218" y="277" font-size="30" fill="#22272B" text-anchor="middle" font-weight="700">$0.07</text>
+  <text x="218" y="301" font-size="13" fill="#5A6570" text-anchor="middle">about $0.00015 a look</text>
+  <rect x="416" y="215" width="356" height="100" rx="10" fill="#EFE9FB" stroke="#6B4BC4" stroke-width="1.5"/>
+  <text x="594" y="241" font-size="12" fill="#6B4BC4" text-anchor="middle" font-weight="700" letter-spacing="1">THE THINKING COST</text>
+  <text x="594" y="277" font-size="30" fill="#22272B" text-anchor="middle" font-weight="700">$0.29</text>
+  <text x="594" y="301" font-size="13" fill="#5A6570" text-anchor="middle">about $0.015 a thought, Claude Opus 5.5</text>
+  <rect x="792" y="215" width="356" height="100" rx="10" fill="#E8EEF4" stroke="#3C5A78" stroke-width="1.5"/>
+  <text x="970" y="241" font-size="12" fill="#3C5A78" text-anchor="middle" font-weight="700" letter-spacing="1">THE WHOLE MORNING</text>
+  <text x="970" y="277" font-size="30" fill="#22272B" text-anchor="middle" font-weight="700">$0.39</text>
+  <text x="970" y="301" font-size="13" fill="#5A6570" text-anchor="middle">with her friends&#x27; replies to her texts</text>
+
+</svg>
