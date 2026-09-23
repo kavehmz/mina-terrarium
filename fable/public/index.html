@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terrarium</title>
+<link rel="stylesheet" href="/style.css">
+<script type="importmap">{"imports":{"three":"/vendor/three.module.js","three/addons/":"/vendor/addons/"}}</script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div id="labels" class="labels"></div>
+
+<div class="ui">
+  <header class="topbar">
+    <div class="brand"><span class="logo">Terrarium</span><small>An artificial person. Jev feels every second. Claude decides what she wants. Code moves the body.</small></div>
+    <div class="controls">
+      <button id="watchBtn" class="primary">Start watching</button>
+      <label>Clock <select id="speedSel"><option value="1">real time</option><option value="10">10×</option><option value="60" selected>60× · a day in 24 min</option><option value="120">120× · a day in 12 min</option><option value="300">300× · fast forward, brains lag</option></select></label>
+      <label>View <select id="viewSel"><option value="corner">corner</option><option value="top">top</option><option value="front">front</option></select></label>
+      <label class="check"><input id="labelsChk" type="checkbox" checked> labels</label>
+      <button id="inspectBtn" title="Exactly what Jev received and answered for this person">Inspect</button>
+    </div>
+  </header>
+
+  <aside class="senses">
+    <div class="who-tabs" id="whoTabs" hidden></div>
+    <div class="panel-title">What <span id="sensesName">Mina</span> feels and senses</div>
+    <div class="body" id="body"></div>
+    <div class="tile-grid" id="tiles"></div>
+    <div class="heard" id="heard"></div>
+    <div class="note" id="senseNote">The brain gets only this: the body, the room, what can be heard, the phone. It does not see the other rooms.</div>
+  </aside>
+
+  <aside class="jev">
+    <div class="jev-head"><span class="dot" id="jevDot"></span><b><span id="brainName">Mina</span>'s System One</b><span id="modelName">jev-latest</span><span id="latency">— ms</span></div>
+    <div class="decision"><div class="label">Most pressing right now</div><div class="big" id="needBig">waiting for the first tick</div><div class="conf" id="needConf"></div></div>
+    <div class="label">Feelings · charge builds while Jev keeps saying yes, fires at the line</div>
+    <div class="concerns" id="concerns"></div>
+    <div class="row">
+      <div><div class="label">Urgency</div><div class="meter" id="urgMeter" data-level="-1"><i></i><i></i><i></i><i></i></div><div class="small" id="urgText">—</div></div>
+      <div><div class="label">Brain</div><div class="mode" id="modeText">—</div></div>
+    </div>
+    <div class="mind">
+      <div class="mind-head"><span class="dot violet" id="mindDot"></span><b>System Two</b><span id="mindModel"></span><span id="mindState" class="state">on call</span></div>
+      <div class="thought" id="thought"></div>
+      <div class="label">Plan</div>
+      <ol class="plan" id="plan"></ol>
+      <div class="directive" id="directive">No note for the fast layer yet.</div>
+    </div>
+    <div class="stats"><span><b id="ticks">0</b>ticks</span><span><b id="mindCalls">0</b>decisions</span><span><b id="cost">$0.000</b>Jev so far</span><span><b id="perHour">$0.00</b>Jev per hour</span></div>
+  </aside>
+
+  <section class="dash">
+    <div class="clock">
+      <div class="time" id="clock">--:--</div><div class="day" id="weekday"></div>
+      <div class="daybar" id="daybar"><i class="mark"></i></div>
+      <div class="small" id="daylight"></div>
+    </div>
+    <div class="story"><div class="label">The story so far</div><ol id="story"></ol></div>
+    <div class="side">
+      <div class="who" id="whoRow"></div>
+      <div class="label">Poke the world</div>
+      <div class="pokes">
+        <button data-incident="doorbell">🔔 Doorbell</button><button data-incident="stove">🔥 Stove on</button><button data-incident="tap">🚰 Tap on</button><button data-incident="door">🚪 Door open</button><button data-incident="smoke">💨 Smoke</button><button data-incident="power">⚡ Power cut</button><button data-incident="fall_mina" class="danger">🆘 Mina falls</button><button data-incident="fall_otto" class="danger" hidden>🆘 Otto falls</button>
+      </div>
+      <form id="poke" autocomplete="off"><select id="pokeTo"><option value="mina">text Mina</option></select><input id="pokeText" maxlength="200" placeholder="a phone message from an unknown number…"><button>Send</button></form>
+    </div>
+    <div class="timeline-wrap"><div class="label">Last 10 minutes of <span id="tlName">Mina</span>'s brain</div><div class="timeline" id="timeline"></div>
+      <div class="legend"><i class="ph-c"></i>calm <i class="ph-w"></i>feeling something <i class="ph-a"></i>deciding, acting <i class="ph-t"></i>asking System Two <i class="ph-z"></i>asleep <i class="ph-s"></i>tidying memory <i class="ph-i"></i>idle, nobody watching</div>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<div class="modal" id="intro">
+  <h2>Terrarium</h2>
+  <p>Mina lives here. Nothing about her day is scripted.</p>
+  <p>Her brain ticks every second. TypeSafe's <b>Jev</b> is System One: it feels hunger, tiredness, boredom, loneliness, and notices when something is wrong. When a feeling crosses the line, <b>Claude</b> is System Two: it decides what she wants to do and hands her body a plan. Code walks, cooks, showers, sleeps.</p>
+  <p>While she thinks, the house clock slows to real time, because thinking takes real seconds of a life.</p>
+  <p>You see everything. Her brain sees only her body, her room, what she can hear, and her phone.</p>
+  <button id="introBtn" class="primary">Start watching</button>
+  <p class="small">The brain only runs while someone is watching. Roughly $1 an hour at 60×.</p>
+</div>
+
+<div class="drawer" id="inspector" hidden>
+  <div class="drawer-head"><b>Inspector · <span id="inspectName">Mina</span></b>
+    <nav><button data-tab="state" class="on">What Jev received</button><button data-tab="answers">What Jev answered</button><button data-tab="questions">Questions</button><button data-tab="memory">Memory</button><button data-tab="thoughts">Log</button></nav>
+    <button id="exportBtn">Export</button><button id="closeInspect" class="close">×</button>
+  </div>
+  <pre id="inspectorBody"></pre>
+</div>
+<script type="module" src="/app.mjs"></script>
+</body>
+</html>

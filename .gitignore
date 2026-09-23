@@ -1,0 +1,9 @@
+# Keys: never commit any .env except the example
+.env
+.env.*
+!.env.example
+# Run logs (they hold whole days of Mina's life; regenerate by running)
+**/logs/*
+!**/logs/.gitkeep
+node_modules/
+.DS_Store

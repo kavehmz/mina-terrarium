@@ -1,0 +1,14 @@
+{
+  "name": "terrarium",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Terrarium: an artificial person whose life runs on System One (TypeSafe Jev) and System Two (Claude).",
+  "scripts": { "start": "node src/server.mjs", "probe": "node tools/probe.mjs" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "three": "0.186.0",
+    "zod": "^4.1.0"
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terrarium · Mina</title>
+<link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div id="labels"></div>
+
+<div class="ui">
+  <header class="topbar">
+    <div class="brand"><span class="logo">Terrarium</span><span class="sub">Mina lives here. <b class="s1">Jev</b> feels time and her body, many times a minute. When a feeling builds up, <b class="s2 mindbrand">Claude</b> decides what she does. Nothing is scripted.</span></div>
+    <div class="controls">
+      <button id="pauseBtn" class="primary">Pause</button>
+      <label>Speed <select id="speedSel"></select></label>
+      <label title="The model behind System Two, the other people and her memory">System Two <select id="modelSel"></select></label>
+      <span class="cost" id="costPill">$0.000</span>
+      <button id="inspectBtn" title="What Jev read and answered (I)">Inspect</button>
+    </div>
+  </header>
+
+  <!-- The one line to follow: feels → Jev fires → Claude decides → body does -->
+  <section class="chain">
+    <div class="link feelk"><div class="k">① She feels</div><div class="v" id="chainFeel">—</div></div>
+    <div class="arrow">→</div>
+    <div class="link jev"><div class="k" id="chainFireK">② Jev fires</div><div class="v" id="chainFire">—</div></div>
+    <div class="arrow">→</div>
+    <div class="link claude"><div class="k">③ <span class="mindbrand">Claude</span> decides</div><div class="v" id="chainDecide">—</div></div>
+    <div class="arrow">→</div>
+    <div class="link body"><div class="k">④ Her body does</div><div class="v" id="chainDo">—</div></div>
+  </section>
+
+  <aside class="left">
+    <div class="panel">
+      <div class="ptitle">What she feels</div>
+      <div id="needs" class="needs"></div>
+    </div>
+    <div class="panel">
+      <div class="ptitle">What she senses</div>
+      <div id="senses" class="senses"></div>
+    </div>
+    <div class="panel">
+      <div class="ptitle">Her phone</div>
+      <div id="phone" class="phone"></div>
+    </div>
+    <div class="panel pokes">
+    <div class="ptitle">Poke her world</div><div class="hint pokehint">You change the world, never her.</div>
+    <div class="pokebtns">
+      <button data-poke="doorbell">🔔 Doorbell</button>
+      <button data-poke="power">⚡ Power cut</button>
+      <button data-poke="leak">💧 Burst pipe</button>
+      <button data-poke="storm">⛈ Storm</button>
+      <button data-poke="fall">🤕 She trips</button>
+    </div>
+    <form id="textForm" class="textform"><input id="textIn" maxlength="200" placeholder="Text her from an unknown number…"><button>Send</button></form>
+  </div>
+  </aside>
+
+  <aside class="right">
+    <div class="panel s1panel">
+      <div class="phead"><span class="beat" id="beat"></span><b>System One</b><span class="who">Jev · feels, every tick</span><span class="ms" id="jevMs">— ms</span></div>
+      <div class="label">Most pressing now</div>
+      <div class="pressing" id="pressing">—</div>
+      <ul class="probs" id="pressingProbs"></ul>
+      <div class="label">Feelings building up <span class="hint">fire at the line</span></div>
+      <div id="feelings" class="feelings"></div>
+      <div class="row2">
+        <div><div class="label">Urgency</div><div class="meter" id="urgency"><i></i><i></i><i></i><i></i></div></div>
+        <div><div class="label">Mood</div><div class="mood" id="mood">—</div></div>
+      </div>
+    </div>
+    <div class="panel s2panel">
+      <div class="phead"><span class="spark" id="spark"></span><b>System Two</b><span class="who"><span id="modelName">Claude</span> · decides when called</span><span class="ms" id="mindMs">—</span></div>
+      <div class="why" id="why">Waiting for System One to call.</div>
+      <blockquote class="thought" id="thought"></blockquote>
+      <div class="label">Her plan</div>
+      <ol class="plan" id="plan"></ol>
+      <div class="note" id="note"></div>
+      <div class="label">Earlier thoughts</div>
+      <ol class="history" id="history"></ol>
+    </div>
+  </aside>
+
+  <section class="bottom">
+    <div class="clockbox">
+      <div class="day" id="day">—</div>
+      <div class="time" id="time">--:--</div>
+      <div class="speed" id="speedNote">—</div>
+    </div>
+    <div class="storybox">
+      <div class="label">What happened</div>
+      <ul class="story" id="story"></ul>
+    </div>
+    <div class="brainstrip">
+      <div class="label">Her brain, last minute <span class="hint">one block per Jev tick · <i class="k2"></i> Claude called</span></div>
+      <div class="timeline" id="timeline"></div>
+      <div class="label mem">Memory <span class="hint" id="memNote"></span></div>
+      <div class="membar"><i id="memFill"></i></div>
+    </div>
+  </section>
+</div>
+
+<div class="paused" id="pausedCard" hidden><b>Paused</b><span>The world and her brain are stopped. No API calls, no cost.</span></div>
+<div class="banner" id="banner" hidden></div>
+<div class="drawer" id="inspector" hidden>
+  <div class="dhead"><b>Inspect</b>
+    <nav><button data-tab="state" class="on">What Jev read</button><button data-tab="answers">What Jev answered</button><button data-tab="questions">Jev's questions</button><button data-tab="memory">Memory</button><button data-tab="thoughts">Thoughts</button></nav>
+    <button id="closeInspect" class="close">×</button>
+  </div>
+  <pre id="inspectBody"></pre>
+</div>
+<script type="module" src="/public/app.mjs"></script>
+</body>
+</html>

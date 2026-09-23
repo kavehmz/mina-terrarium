@@ -1,0 +1,15 @@
+services:
+  terrarium:
+    build: .
+    ports:
+      - "8080:8080"
+    # Keys live in the parent folder's .env (copy ../.env.example). The file wins over the host shell on purpose.
+    env_file:
+      - path: ../.env
+        required: false
+    environment:
+      PORT: "8080"
+      LOG_DIR: /app/logs
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped

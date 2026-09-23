@@ -1,0 +1,22 @@
+name: terrarium
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${TERRARIUM_PORT:-3006}:3000"
+    # Keys come from the repo-root .env at runtime; they are never baked into the image or sent to the browser.
+    env_file:
+      - path: ../.env
+        required: true
+    environment:
+      PORT: "3000"
+      LOG_DIR: /app/logs
+      TZ: ${TZ:-Europe/Berlin}
+      START_HOUR: ${START_HOUR:-6.5}
+    volumes:
+      - ./logs:/app/logs
+      # Code is mounted read-only so a restart picks up edits without a rebuild.
+      - ./src:/app/src:ro
+      - ./public:/app/public:ro
+    init: true
+    restart: unless-stopped

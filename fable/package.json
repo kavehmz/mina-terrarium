@@ -1,0 +1,15 @@
+{
+  "name": "typesafe-time",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Terrarium: a simulated home watched by a ticking System One brain (TypeSafe Jev) with a System Two mind (Claude).",
+  "scripts": {
+    "start": "node --experimental-strip-types src/server.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "zod": "^4.0.0",
+    "three": "0.186.0"
+  }
+}
